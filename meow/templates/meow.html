@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} got meat? {% endblock %}</h1>
+    {#  add empty list
+        dropdowns should contain entries from db
+        'add meat' button to add more entries #}
+{% endblock %}

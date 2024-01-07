@@ -41,6 +41,7 @@ def get_meats():
     cur.close()
     conn.close()
 
+    # give them da meats
     return meats
 
 # index
