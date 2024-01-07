@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for meat in meats %}
+    <h1> {{ meat }} </h1>
+    <table class="chicken-type">
+        <tr>
+            <th>Type of Meat</th>
+            <th>Meat</th>
+            <th>Bone</th>
+            <th>Offal</th>
+        </tr>
+        {% for type in meats[meat] %}
+        <tr>
+            <th>{{ type[0] }}</th>
+            <th>{{ type[1] }}%</th>
+            <th>{{ type[2] }}%</th>
+            <th>{{ type[3] }}%</th>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endfor %}
+{% endblock %}

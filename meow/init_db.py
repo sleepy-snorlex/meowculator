@@ -1,4 +1,6 @@
 # Bone-Meat ratio data source: https://www.hannahra.com/2021/02/my-raw-meaty-bone-percentage-spreadsheet.html
+# Update ratios with better source when available
+# Currently missing offal ratios 
 
 import os
 import psycopg2
