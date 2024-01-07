@@ -1,6 +1,6 @@
 import os
 import psycopg2
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for, redirect
 
 app = Flask(__name__)
 
@@ -14,9 +14,8 @@ def get_db_connection():
 
     return conn
 
-# index
-@app.route('/')
-def index():
+# get_meats()
+def get_meats():
     conn = get_db_connection()
     cur = conn.cursor()
 
@@ -42,4 +41,14 @@ def index():
     cur.close()
     conn.close()
 
-    return render_template('index.html', meats=meats)
+    return meats
+
+# index
+@app.route('/')
+def index():
+    return render_template('index.html', meats=get_meats())
+
+# meowculator
+@app.route('/meow/', methods=('GET', 'POST'))
+def meow():
+    return render_template('meow.html', meats=get_meats())
